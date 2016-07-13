@@ -16,7 +16,7 @@ body {
 /*	position: relative;
 	min-height: 100%;
 	padding-bottom: 6rem;*/
-	background: url('../img/Background-texture.jpg') no-repeat center center fixed;
+	background: url('../img/background-texture.jpg') no-repeat center center fixed;
 	background-size: cover;
 
 }
