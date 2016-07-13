@@ -30,9 +30,7 @@ header {
 	background: rgba(0,0,0,.5);
 	border-color: transparent;
 }
-.navbar.navbar-default .navbar-brand>img {
-	height:400px;
-}
+
 .navbar-default .nav.navbar-nav>li>a {
 	font-family: 'Hind Guntur', sans-serif;
 	font-size: 1.2em;
@@ -80,4 +78,15 @@ form {
 
 .footer p{
 	padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+	.navbar.navbar-default .navbar-brand>img {
+		display: none;
+	}
+}
+@media screen and (min-width: 1001px) {
+	.navbar.navbar-default .navbar-brand>img {
+		height:400px;
+	}
 }
