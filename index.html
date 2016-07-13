@@ -87,7 +87,7 @@
 			<thead>
 				<tr>
 					<th>Raaga
-						<i class="fa fa-sort" aria-hidden="true"></i>
+						<i class="fa fa-sort" aria-hidden="true" ng-click="sortBy('name')"></i>
 						<form id="nameSearch" role="search">
 			        <div class="form-group">
 			          <input type="text" class="form-control" placeholder="Search" ng-model="search.name">
@@ -95,7 +95,7 @@
 			      </form>
 					</th>
 					<th>Language
-						<i class="fa fa-sort" aria-hidden="true"></i>
+						<i class="fa fa-sort" aria-hidden="true" ng-click="sortBy('lang')"></i>
 						<form id="langSearch" role="search">
 			        <div class="form-group">
 			          <input type="text" class="form-control" placeholder="Search" ng-model="search.lang">
@@ -103,7 +103,7 @@
 			      </form>
 					</th>
 					<th>Artist
-						<i class="fa fa-sort" aria-hidden="true"></i>
+						<i class="fa fa-sort" aria-hidden="true" ng-click="sortBy('artist')"></i>
 						<form id="artistSearch" role="search">
 			        <div class="form-group">
 			          <input type="text" class="form-control" placeholder="Search" ng-model="search.artist">
@@ -111,7 +111,7 @@
 			      </form>
 					</th>
 					<th>Album
-						<i class="fa fa-sort" aria-hidden="true"></i>
+						<i class="fa fa-sort" aria-hidden="true" ng-click="sortBy('album')"></i>
 						<form id="albumSearch" role="search">
 			        <div class="form-group">
 			          <input type="text" class="form-control" placeholder="Search" ng-model="search.album">
@@ -119,7 +119,7 @@
 			      </form>
 					</th>
 					<th>Popularity
-						<i class="fa fa-sort" aria-hidden="true"></i>
+						<i class="fa fa-sort" aria-hidden="true" ng-click="sortBy('rating')"></i>
 						<form id="ratingSearch" role="search">
 			        <div class="form-group">
 			          <input type="number" class="form-control" placeholder="Search" ng-model="search.rating">
@@ -128,7 +128,7 @@
 					</th>
 				</tr>
 			</thead>
-			<tbody ng-repeat="entry in raagas | filter:search">
+			<tbody ng-repeat="entry in raagas | filter:search | orderBy:propertyName:reverse">
 				<tr>
 					<td>{{entry.name}}</td>
 					<td>{{entry.lang}}</td>
