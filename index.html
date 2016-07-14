@@ -23,7 +23,7 @@
 	
 </head>
 <body class="body">
-	
+	<div id="body-wrapper">
 	<!-- Navbar -->
 	<nav class="navbar navbar-default">
 	  <div class="container">
@@ -77,20 +77,21 @@
 	</div>
 	<!-- Main Content for the Table -->
 	<div class="container table-wrapper" ng-controller="mainCtrl">
-		<table class="table table-responsive">
+		<table class="table table-striped table-responsive">
 			<thead>
 					<form>
-						<tr>
+						<tr class="form-group">
 							<th ng-repeat="head in header">
 								{{head.displayName}}
 								<i class="fa fa-sort" aria-hidden="true" ng-click="sortBy(head.colName)"></i>
-					      <input type="text" placeholder="Search" dynamic-model="'query.'+ head.colName"> 
+					      <input type="text" class="form-control" placeholder="Search" dynamic-model="'query.'+ head.colName"> 
 							</th>
 						</tr>
 					</form>	
 			</thead>
 			<tbody>
-				<tr ng-repeat="entry in raagas | filter:query | orderBy:propertyName:reverse">
+			<!-- Replacing ng-repeat="entry in raagas | filter:query | orderBy:sortKey:reverse" -->
+				<tr dir-paginate="entry in raagas|orderBy:sortKey:reverse|filter:query|itemsPerPage:20">
 					<td>{{entry.name}}</td>
 					<td>{{entry.lang}}</td>
 					<td>{{entry.artist}}</td>
@@ -100,6 +101,12 @@
 				</tr>
 			</tbody>				
 		</table>
+		<!-- Pagination Controls -->
+		<dir-pagination-controls id="pagination"
+       max-size="5"
+       direction-links="true"
+       boundary-links="true" >
+    </dir-pagination-controls>
 		
 	</div>
 	<footer class="footer">
@@ -107,7 +114,9 @@
 			<p>&copy; Raaganveshana</p>
 		</div>	
 	</footer>
+	</div>
 	
  	<script type="text/javascript" src="js/app.js"></script>
+ 	<script src="js/dirPagination.js"></script>
 </body>
 </html>

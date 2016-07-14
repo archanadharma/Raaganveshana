@@ -1,199 +1,35 @@
-var app = angular.module('raagApp', []);
+var app = angular.module('raagApp', ['angularUtils.directives.dirPagination']);
 
-app.controller('mainCtrl', function($scope){
+app.controller('mainCtrl', ['$scope', '$http', function($scope, $http){
 
-	$scope.query = {};
-	// console.log($scope.query);
-	$scope.header = [
-		{
-			displayName: "Raaga",
-		  colName: "name"
-		},
-		{
-		  displayName: "Language",
-		  colName: "lang"
-		},
-		{ displayName: "Artist",
-			colName: "artist"
-		},
-		{ displayName: "Album",
-			colName: "album"
-		},
-		{
-			displayName: "No. of Hits",
-			colName: "hits"
-		},
-		{ displayName: "Listen",
-			colName: "link"
-		}
+	$scope.query = {}; //Will handle queries for filtering data in the table
+	$scope.header = [ 
+		{displayName: "Raaga", colName: "name"},
+		{displayName: "Language", colName: "lang"},
+		{displayName: "Artist", colName: "artist"},
+		{displayName: "Album",	colName: "album"},
+		{displayName: "No. of Hits", colName: "hits"},
+		{displayName: "Listen", colName: "link"}
 	];
 		
-	$scope.raagas = [ 
-		{
-			name: "hamsadhwani",
-			lang: "hindi",
-			artist: "abc",
-			album: "xyz",
-			hits: 10
-		},
-		{
-			name: "bhairavi",
-			lang: "telugu",
-			artist: "tyagaraja",
-			album: "xyz",
-			hits: 10
-		},
-		{
-			name: "bhairavi",
-			lang: "kannada",
-			artist: "tyagaraja",
-			album: "xyz",
-			hits: 10
-		},
-		{
-			name: "bhairavi",
-			lang: "Hindi",
-			artist: "S.D Burman",
-			album: "Guide",
-			hits: 10
-		},
-		{
-			name: "bhairavi",
-			lang: "telugu",
-			artist: "tyagaraja",
-			album: "shenai",
-			hits: 10
-		},
-		{
-			name: "Kambhoji",
-			lang: "telugu",
-			artist: "Ravi Shankar",
-			album: "Sitar",
-			hits: 10
-		},
-		{
-			name: "bhairavi",
-			lang: "telugu",
-			artist: "A R Rahman",
-			album: "xyz",
-			hits: 10
-		},
-		{
-			name: "Kalyani",
-			lang: "telugu",
-			artist: "Annamayya",
-			album: "xyz",
-			hits: 10
-		},
-				{
-			name: "bhairavi",
-			lang: "telugu",
-			artist: "tyagaraja",
-			album: "xyz",
-			hits: 10
-		},
-		{
-			name: "bhairavi",
-			lang: "kannada",
-			artist: "tyagaraja",
-			album: "xyz",
-			hits: 10
-		},
-		{
-			name: "bhairavi",
-			lang: "Hindi",
-			artist: "S.D Burman",
-			album: "Guide",
-			hits: 10
-		},
-		{
-			name: "bhairavi",
-			lang: "telugu",
-			artist: "tyagaraja",
-			album: "shenai",
-			hits: 10
-		},
-		{
-			name: "Kambhoji",
-			lang: "telugu",
-			artist: "Ravi Shankar",
-			album: "Sitar",
-			hits: 10
-		},
-		{
-			name: "bhairavi",
-			lang: "telugu",
-			artist: "A R Rahman",
-			album: "xyz",
-			hits: 10
-		},
-		{
-			name: "Kalyani",
-			lang: "telugu",
-			artist: "Annamayya",
-			album: "xyz",
-			hits: 10
-		},
-				{
-			name: "bhairavi",
-			lang: "telugu",
-			artist: "tyagaraja",
-			album: "xyz",
-			hits: 10
-		},
-		{
-			name: "bhairavi",
-			lang: "kannada",
-			artist: "tyagaraja",
-			album: "xyz",
-			hits: 10
-		},
-		{
-			name: "bhairavi",
-			lang: "Hindi",
-			artist: "S.D Burman",
-			album: "Guide",
-			hits: 10
-		},
-		{
-			name: "bhairavi",
-			lang: "telugu",
-			artist: "tyagaraja",
-			album: "shenai",
-			hits: 10
-		},
-		{
-			name: "Kambhoji",
-			lang: "telugu",
-			artist: "Ravi Shankar",
-			album: "Sitar",
-			hits: 10
-		},
-		{
-			name: "bhairavi",
-			lang: "telugu",
-			artist: "A R Rahman",
-			album: "xyz",
-			hits: 10
-		},
-		{
-			name: "Kalyani",
-			lang: "telugu",
-			artist: "Annamayya",
-			album: "xyz",
-			hits: 10
-		}
-	];
+	$scope.raagas = []; //Declaring an empty array for Raagas
+	$http.get("../data/raagaDataRecords.json").success(function(response){
+		$scope.raagas = response;
+	});
 
-	$scope.propertyName = 'name';
+
+	$scope.sortKey = 'name';
 	$scope.reverse = false;
 
-	$scope.sortBy = function(propertyName){
-		$scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
-		$scope.propertyName = propertyName;
+	$scope.sortBy = function(keyname){
+		$scope.sortKey = keyname;
+		$scope.reverse = !$scope.reverse;
+		
 	};
 
-});
+}]);
+
+// Directive to Dynamically update the ng-model within ng-repeat
 
 app.directive('dynamicModel', ['$compile', '$parse', function ($compile, $parse) {
     return {
