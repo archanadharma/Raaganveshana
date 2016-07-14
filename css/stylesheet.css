@@ -60,6 +60,11 @@ table {
 	font-size: 1.2em;
 }
 
+/*table.table-striped.table-responsive {
+	background: rgba(76, 175, 80, 0.6);
+}*/
+
+
 thead th {
 	text-align: center;
 }
@@ -69,8 +74,8 @@ form {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  /*position: absolute;*/
+  /*bottom: 0;*/
 	width: 100%;
 	height: 40px;
 	color: #fff;
