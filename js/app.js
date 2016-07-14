@@ -3,14 +3,11 @@ var app = angular.module('raagApp', ['angularUtils.directives.dirPagination']);
 app.controller('mainCtrl', ['$scope', '$http', function($scope, $http){
 
 	$scope.query = {}; //Will handle queries for filtering data in the table
-	$scope.header = [ 
-		{displayName: "Raaga", colName: "name"},
-		{displayName: "Language", colName: "lang"},
-		{displayName: "Artist", colName: "artist"},
-		{displayName: "Album",	colName: "album"},
-		{displayName: "No. of Hits", colName: "hits"},
-		{displayName: "Listen", colName: "link"}
-	];
+	
+	$scope.header = [];
+		$http.get("../data/raagaTableHeaders.json").success(function(response){
+			$scope.header = response;
+		});
 		
 	$scope.raagas = []; //Declaring an empty array for Raagas
 	$http.get("../data/raagaDataRecords.json").success(function(response){

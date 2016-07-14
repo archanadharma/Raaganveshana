@@ -69,9 +69,13 @@ table.table-striped>tbody>tr:nth-of-type(even) {
 	background: #C5E1A5;
 }
 
-
 thead th {
 	text-align: center;
+}
+
+th, td {
+	padding: 15px;
+	text-align: left;
 }
 
 form {

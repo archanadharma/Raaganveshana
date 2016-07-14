@@ -1,8 +1,7 @@
-
 	[
 		{"id":1, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
 		{"id":2, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
-		{"id":3, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
+		{"id":3, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"This is a long name for an album", "rating":10, "link": ""},
 		{"id":4, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
 		{"id":5, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
 		{"id":6, "name":"kalyani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
@@ -10,7 +9,7 @@
 		{"id":8, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
 		{"id":9, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
 		{"id":10, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
-		{"id":11, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
+		{"id":11, "name":"hamsadhwani", "lang":"hindi", "artist":"Ustad Amjad Ali Khan", "album":"xyz", "rating":10, "link": ""},
 		{"id":12, "name":"bhairavi", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
 		{"id":13, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
 		{"id":14, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
@@ -23,7 +22,7 @@
 		{"id":21, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
 		{"id":22, "name":"hamsadhwani", "lang":"telugu", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
 		{"id":23, "name":"kambhoji", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
-		{"id":24, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
+		{"id":24, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"An extra extra extra extra loooong name for testing", "rating":10, "link": ""},
 		{"id":25, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
 		{"id":26, "name":"hamsadhwani", "lang":"kannada", "artist":"abc", "album":"xyz", "rating":10, "link": ""},
 		{"id":27, "name":"hamsadhwani", "lang":"hindi", "artist":"abc", "album":"xyz", "rating":10, "link": ""},

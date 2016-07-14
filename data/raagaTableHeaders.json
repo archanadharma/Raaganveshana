@@ -1,0 +1,8 @@
+[
+	{"displayName": "Raaga", "colName": "name"},
+	{"displayName": "Language", "colName": "lang"},
+	{"displayName": "Artist", "colName": "artist"},
+	{"displayName": "Album",	"colName": "album"},
+	{"displayName": "No. of Hits", "colName": "hits"},
+	{"displayName": "Listen", "colName": "link"}
+]
